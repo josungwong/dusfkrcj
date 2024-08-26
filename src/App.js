@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { Container,Row,Col } from 'react-bootstrap';
 import './App.css';
+import ContactForm from './compo/ContactForm';
+import 'bootstrap/dist/css/bootstrap.css';
+import ContactList from './compo/ContactList';
 
+
+
+//1 왼쪽에는 연락처 등록 , 오른쪽에는 리스트와 서치창
+//2 리스트에는 연락처 등록이 가능하다
+//3 리스트에 아이탬 갯수
+//4 서치에서 이름 검색이 가능하다
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <h1 className='main-title'>연락처</h1>
+      <Container>
+        <Row>
+          <Col>
+            <ContactForm/>
+          </Col>
+          <Col><ContactList/></Col>
+        </Row>
+      </Container>
     </div>
   );
 }
